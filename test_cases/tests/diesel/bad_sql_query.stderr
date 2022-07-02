@@ -1,0 +1,13 @@
+error[E0277]: the trait bound `std::string::String: FromSqlRow<Untyped, Pg>` is not satisfied
+    --> tests/diesel/bad_sql_query.rs:4:28
+     |
+4    |     diesel::sql_query("…").load(conn)
+     |                            ^^^^ the trait `FromSqlRow<Untyped, Pg>` is not implemented for `std::string::String`
+     |
+     = note: required because of the requirements on the impl of `load_dsl::private::CompatibleType<std::string::String, Pg>` for `Untyped`
+     = note: required because of the requirements on the impl of `LoadQuery<'_, diesel::PgConnection, std::string::String>` for `SqlQuery`
+note: required by a bound in `diesel::RunQueryDsl::load`
+    --> $CARGO/diesel-2.0.0-rc.0/src/query_dsl/mod.rs
+     |
+     |         Self: LoadQuery<'query, Conn, U>,
+     |               ^^^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `diesel::RunQueryDsl::load`

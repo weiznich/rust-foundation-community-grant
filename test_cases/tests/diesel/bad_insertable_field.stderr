@@ -1,0 +1,28 @@
+error[E0277]: the trait bound `i32: diesel::Expression` is not satisfied
+  --> tests/diesel/bad_insertable_field.rs:10:10
+   |
+10 | #[derive(Insertable)]
+   |          ^^^^^^^^^^ the trait `diesel::Expression` is not implemented for `i32`
+   |
+   = note: required because of the requirements on the impl of `AsExpression<diesel::sql_types::Text>` for `i32`
+   = note: this error originates in the derive macro `Insertable` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `i32: diesel::Expression` is not satisfied
+  --> tests/diesel/bad_insertable_field.rs:10:10
+   |
+10 | #[derive(Insertable)]
+   |          ^^^^^^^^^^ the trait `diesel::Expression` is not implemented for `i32`
+   |
+   = note: required because of the requirements on the impl of `diesel::Expression` for `&'insert i32`
+   = note: required because of the requirements on the impl of `AsExpression<diesel::sql_types::Text>` for `&'insert i32`
+   = note: this error originates in the derive macro `Insertable` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `i32: diesel::Expression` is not satisfied
+  --> tests/diesel/bad_insertable_field.rs:10:10
+   |
+10 | #[derive(Insertable)]
+   |          ^^^^^^^^^^ the trait `diesel::Expression` is not implemented for `i32`
+   |
+   = note: required because of the requirements on the impl of `diesel::Expression` for `&i32`
+   = note: required because of the requirements on the impl of `AsExpression<diesel::sql_types::Text>` for `&i32`
+   = note: this error originates in the derive macro `Insertable` (in Nightly builds, run with -Z macro-backtrace for more info)
