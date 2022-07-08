@@ -24,3 +24,10 @@ fn axum() {
     let t = trybuild::TestCases::new();
     t.compile_fail("tests/axum/*.rs");
 }
+
+
+#[test]
+fn bevy() {
+    let t = trybuild::TestCases::new();
+    t.compile_fail("tests/bevy/*.rs");
+}
