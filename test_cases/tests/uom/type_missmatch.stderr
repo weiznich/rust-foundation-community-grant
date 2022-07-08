@@ -1,0 +1,8 @@
+error[E0308]: mismatched types
+ --> tests/uom/type_missmatch.rs:9:22
+  |
+9 |     let error = l1 + t1;
+  |                      ^^ expected struct `Z0`, found struct `PInt`
+  |
+  = note: expected struct `Quantity<dyn Dimension<N = Z0, M = Z0, J = Z0, Th = Z0, T = Z0, Kind = (dyn Kind + 'static), L = PInt<UInt<UTerm, B1>>, I = Z0>, _, _>`
+             found struct `Quantity<dyn Dimension<N = Z0, M = Z0, J = Z0, Th = Z0, T = PInt<UInt<UTerm, B1>>, Kind = (dyn Kind + 'static), L = Z0, I = Z0>, dyn uom::si::Units<f32, electric_current = uom::si::electric_current::ampere, luminous_intensity = uom::si::luminous_intensity::candela, mass = uom::si::mass::kilogram, thermodynamic_temperature = uom::si::thermodynamic_temperature::kelvin, length = uom::si::length::meter, time = uom::si::time::second, amount_of_substance = uom::si::amount_of_substance::mole>, _>`
