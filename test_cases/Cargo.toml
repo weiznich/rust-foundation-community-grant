@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 trybuild = "1"
 diesel = {version = "2.0.0-rc.0", default-features = false, features = ["sqlite", "postgres", "mysql"]}
+chumsky = "0.8.0"
