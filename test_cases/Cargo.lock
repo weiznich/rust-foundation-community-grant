@@ -1381,6 +1381,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9ea835d29036a4087793836fa931b08837ad5e957da9e23886b29586fb9b6650"
 
 [[package]]
+name = "easy-ml"
+version = "1.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0d937895a491e817cee36d21fa6653ca089d59dc2c537c2e582820129bca78e1"
+
+[[package]]
 name = "env_logger"
 version = "0.8.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3146,6 +3152,7 @@ dependencies = [
  "bevy",
  "chumsky",
  "diesel",
+ "easy-ml",
  "trybuild",
  "uom",
 ]

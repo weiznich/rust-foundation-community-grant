@@ -31,3 +31,9 @@ fn bevy() {
     let t = trybuild::TestCases::new();
     t.compile_fail("tests/bevy/*.rs");
 }
+
+#[test]
+fn easy_ml() {
+    let t = trybuild::TestCases::new();
+    t.compile_fail("tests/easy_ml/*.rs");
+}
