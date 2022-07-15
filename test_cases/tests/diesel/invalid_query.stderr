@@ -1,0 +1,80 @@
+error[E0277]: the trait bound `posts::columns::id: SelectableExpression<users::table>` is not satisfied
+  --> tests/diesel/invalid_query.rs:20:18
+   |
+20 |     users::table.select(posts::id);
+   |                  ^^^^^^ the trait `SelectableExpression<users::table>` is not implemented for `posts::columns::id`
+   |
+   = help: the following other types implement trait `SelectableExpression<QS>`:
+             <posts::columns::id as SelectableExpression<JoinOn<Join, On>>>
+             <posts::columns::id as SelectableExpression<Only<posts::table>>>
+             <posts::columns::id as SelectableExpression<SelectStatement<FromClause<From>>>>
+             <posts::columns::id as SelectableExpression<diesel::internal::table_macro::Join<Left, Right, Inner>>>
+             <posts::columns::id as SelectableExpression<diesel::internal::table_macro::Join<Left, Right, LeftOuter>>>
+             <posts::columns::id as SelectableExpression<posts::table>>
+   = note: required because of the requirements on the impl of `SelectDsl<posts::columns::id>` for `SelectStatement<FromClause<users::table>>`
+
+error[E0271]: type mismatch resolving `<users::table as AppearsInFromClause<posts::table>>::Count == diesel::query_source::Once`
+    --> tests/diesel/invalid_query.rs:21:50
+     |
+21   |     users::table.filter(users::id.eq(posts::id)).load::<(i32, String)>(conn);
+     |                                                  ^^^^ expected struct `diesel::query_source::Once`, found struct `diesel::query_source::Never`
+     |
+note: required because of the requirements on the impl of `AppearsOnTable<users::table>` for `posts::columns::id`
+    --> tests/diesel/invalid_query.rs:11:1
+     |
+11   | / table! {
+12   | |     posts(id) {
+13   | |         id -> Integer,
+14   | |         name -> Text,
+15   | |         user_id -> Integer,
+16   | |     }
+17   | | }
+     | |_^
+     = note: 2 redundant requirements hidden
+     = note: required because of the requirements on the impl of `AppearsOnTable<users::table>` for `diesel::expression::grouped::Grouped<diesel::expression::operators::Eq<users::columns::id, posts::columns::id>>`
+     = note: required because of the requirements on the impl of `diesel::query_builder::where_clause::ValidWhereClause<FromClause<users::table>>` for `diesel::query_builder::where_clause::WhereClause<diesel::expression::grouped::Grouped<diesel::expression::operators::Eq<users::columns::id, posts::columns::id>>>`
+     = note: required because of the requirements on the impl of `Query` for `SelectStatement<FromClause<users::table>, diesel::query_builder::select_clause::DefaultSelectClause<FromClause<users::table>>, diesel::query_builder::distinct_clause::NoDistinctClause, diesel::query_builder::where_clause::WhereClause<diesel::expression::grouped::Grouped<diesel::expression::operators::Eq<users::columns::id, posts::columns::id>>>>`
+     = note: required because of the requirements on the impl of `LoadQuery<'_, _, (i32, std::string::String)>` for `SelectStatement<FromClause<users::table>, diesel::query_builder::select_clause::DefaultSelectClause<FromClause<users::table>>, diesel::query_builder::distinct_clause::NoDistinctClause, diesel::query_builder::where_clause::WhereClause<diesel::expression::grouped::Grouped<diesel::expression::operators::Eq<users::columns::id, posts::columns::id>>>>`
+note: required by a bound in `diesel::RunQueryDsl::load`
+    --> $CARGO/diesel-2.0.0-rc.0/src/query_dsl/mod.rs
+     |
+     |         Self: LoadQuery<'query, Conn, U>,
+     |               ^^^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `diesel::RunQueryDsl::load`
+     = note: this error originates in the macro `$crate::__diesel_column` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `users::table: TableNotEqual<posts::table>` is not satisfied
+    --> tests/diesel/invalid_query.rs:21:50
+     |
+21   |     users::table.filter(users::id.eq(posts::id)).load::<(i32, String)>(conn);
+     |                                                  ^^^^ the trait `TableNotEqual<posts::table>` is not implemented for `users::table`
+     |
+     = help: the following other types implement trait `TableNotEqual<T>`:
+               <Only<pg::metadata_lookup::pg_namespace::table> as TableNotEqual<pg::metadata_lookup::pg_type::table>>
+               <Only<pg::metadata_lookup::pg_type::table> as TableNotEqual<pg::metadata_lookup::pg_namespace::table>>
+               <pg::metadata_lookup::pg_namespace::table as TableNotEqual<Only<pg::metadata_lookup::pg_type::table>>>
+               <pg::metadata_lookup::pg_namespace::table as TableNotEqual<pg::metadata_lookup::pg_type::table>>
+               <pg::metadata_lookup::pg_type::table as TableNotEqual<Only<pg::metadata_lookup::pg_namespace::table>>>
+               <pg::metadata_lookup::pg_type::table as TableNotEqual<pg::metadata_lookup::pg_namespace::table>>
+     = note: required because of the requirements on the impl of `AppearsInFromClause<posts::table>` for `users::table`
+note: required because of the requirements on the impl of `AppearsOnTable<users::table>` for `posts::columns::id`
+    --> tests/diesel/invalid_query.rs:11:1
+     |
+11   | / table! {
+12   | |     posts(id) {
+13   | |         id -> Integer,
+14   | |         name -> Text,
+15   | |         user_id -> Integer,
+16   | |     }
+17   | | }
+     | |_^
+     = note: 2 redundant requirements hidden
+     = note: required because of the requirements on the impl of `AppearsOnTable<users::table>` for `diesel::expression::grouped::Grouped<diesel::expression::operators::Eq<users::columns::id, posts::columns::id>>`
+     = note: required because of the requirements on the impl of `diesel::query_builder::where_clause::ValidWhereClause<FromClause<users::table>>` for `diesel::query_builder::where_clause::WhereClause<diesel::expression::grouped::Grouped<diesel::expression::operators::Eq<users::columns::id, posts::columns::id>>>`
+     = note: required because of the requirements on the impl of `Query` for `SelectStatement<FromClause<users::table>, diesel::query_builder::select_clause::DefaultSelectClause<FromClause<users::table>>, diesel::query_builder::distinct_clause::NoDistinctClause, diesel::query_builder::where_clause::WhereClause<diesel::expression::grouped::Grouped<diesel::expression::operators::Eq<users::columns::id, posts::columns::id>>>>`
+     = note: required because of the requirements on the impl of `LoadQuery<'_, _, (i32, std::string::String)>` for `SelectStatement<FromClause<users::table>, diesel::query_builder::select_clause::DefaultSelectClause<FromClause<users::table>>, diesel::query_builder::distinct_clause::NoDistinctClause, diesel::query_builder::where_clause::WhereClause<diesel::expression::grouped::Grouped<diesel::expression::operators::Eq<users::columns::id, posts::columns::id>>>>`
+note: required by a bound in `diesel::RunQueryDsl::load`
+    --> $CARGO/diesel-2.0.0-rc.0/src/query_dsl/mod.rs
+     |
+     |         Self: LoadQuery<'query, Conn, U>,
+     |               ^^^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `diesel::RunQueryDsl::load`
+     = note: this error originates in the macro `$crate::__diesel_column` (in Nightly builds, run with -Z macro-backtrace for more info)
