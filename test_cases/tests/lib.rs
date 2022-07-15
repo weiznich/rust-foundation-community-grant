@@ -37,3 +37,9 @@ fn easy_ml() {
     let t = trybuild::TestCases::new();
     t.compile_fail("tests/easy_ml/*.rs");
 }
+
+#[test]
+fn typed_builder() {
+    let t = trybuild::TestCases::new();
+    t.compile_fail("tests/typed_builder/*.rs");
+}

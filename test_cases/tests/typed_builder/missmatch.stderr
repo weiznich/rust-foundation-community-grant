@@ -1,0 +1,47 @@
+warning: use of deprecated associated function `FooBuilder::<((), __y, __z)>::build`: Missing required field x
+  --> tests/typed_builder/missmatch.rs:21:20
+   |
+21 |     Foo::builder().build();
+   |                    ^^^^^
+   |
+   = note: `#[warn(deprecated)]` on by default
+
+error[E0061]: this function takes 1 argument but 0 arguments were supplied
+  --> tests/typed_builder/missmatch.rs:21:20
+   |
+21 |     Foo::builder().build();
+   |                    ^^^^^-- an argument of type `FooBuilder_Error_Missing_required_field_x` is missing
+   |
+note: associated function defined here
+  --> tests/typed_builder/missmatch.rs:3:21
+   |
+3  | #[derive(PartialEq, TypedBuilder)]
+   |                     -^^^^^^^^^^^
+   = note: this error originates in the derive macro `TypedBuilder` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: provide the argument
+   |
+21 |     Foo::builder().build(/* FooBuilder_Error_Missing_required_field_x */);
+   |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+warning: use of deprecated associated function `FooBuilder::<(__x, (std::option::Option<i32>,), __z)>::y`: Repeated field y
+  --> tests/typed_builder/missmatch.rs:24:30
+   |
+24 |     Foo::builder().x(1).y(2).y(3);
+   |                              ^
+
+error[E0308]: mismatched types
+  --> tests/typed_builder/missmatch.rs:24:32
+   |
+24 |     Foo::builder().x(1).y(2).y(3);
+   |                              - ^ expected enum `FooBuilder_Error_Repeated_field_y`, found integer
+   |                              |
+   |                              arguments to this function are incorrect
+   |
+note: associated function defined here
+  --> tests/typed_builder/missmatch.rs:11:5
+   |
+3  | #[derive(PartialEq, TypedBuilder)]
+   |                     ------------
+...
+11 |     y: Option<i32>,
+   |     ^
