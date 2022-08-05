@@ -130,10 +130,14 @@ Versions:
 
  | version | link (code)                                    | link (error message)                                  | change since last version |
  |---------|------------------------------------------------|-------------------------------------------------------|---------------------------|
- | 1       | [bad_insertable_field.rs][bad_insertable.rs-1] | [bad_insertable_field.stderr][bad_sql_query.stderr-1] |                           |
+ | 1       | [bad_insertable_field.rs][bad_insertable.rs-1] | [bad_insertable_field.stderr][bad_insertable.stderr-1] |                           |
+ | 2       | [bad_insertable_field.rs][bad_insertable.rs-2] | [bad_insertable_field.stderr][bad_insertable.stderr-2] | https://github.com/diesel-rs/diesel/pull/3228 improves the spans for certain trait bounds so that compiler errors point to the corresponding struct fields instead  of the derive                          |
+
 
 [bad_insertable.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/diesel/bad_insertable_field.rs
-[bad_insertable.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/diesel/bad_insertable_field.stdr
+[bad_insertable.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/diesel/bad_insertable_field.stderr
+[bad_insertable.rs-2]:https://github.com/weiznich/rust-foundation-community-grant/blob/7322e4ba58f7a47b27bb7e88e9ded056fdb79e99/test_cases/tests/diesel/bad_insertable_field.rs
+[bad_insertable.stderr-2]: https://github.com/weiznich/rust-foundation-community-grant/blob/7322e4ba58f7a47b27bb7e88e9ded056fdb79e99/test_cases/tests/diesel/bad_insertable_field.stderr
 
 
 #### bad_sql_query.rs <a name = "diesel_bad_sql_query"></a>
