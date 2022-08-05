@@ -1,5 +1,5 @@
 error[E0277]: the trait bound `A: WorldQuery` is not satisfied
-   --> tests/bevy/system_missmatch.rs:67:45
+   --> tests/bevy/system_mismatch.rs:67:45
     |
 67  | fn missing_reference_in_query_system(query: Query<A, With<B>>) {}
     |                                             ^^^^^^^^^^^^^^^^^ the trait `WorldQuery` is not implemented for `A`
@@ -21,7 +21,7 @@ note: required by a bound in `bevy::prelude::Query`
     |                                     ^^^^^^^^^^ required by this bound in `bevy::prelude::Query`
 
 error[E0271]: type mismatch resolving `for<'w, 's> <ReadFetch<B> as Fetch<'w, 's>>::Item == bool`
-   --> tests/bevy/system_missmatch.rs:70:44
+   --> tests/bevy/system_mismatch.rs:70:44
     |
 70  | fn missing_brackets_in_query_system(query: Query<&A, &B>) {}
     |                                            ^^^^^^^^^^^^^ expected `bool`, found `&B`

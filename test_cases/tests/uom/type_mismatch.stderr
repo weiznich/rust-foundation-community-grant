@@ -1,5 +1,5 @@
 error[E0308]: mismatched types
- --> tests/uom/type_missmatch.rs:9:22
+ --> tests/uom/type_mismatch.rs:9:22
   |
 9 |     let error = l1 + t1;
   |                      ^^ expected struct `PInt`, found struct `Z0`
