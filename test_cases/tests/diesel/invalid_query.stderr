@@ -1,9 +1,10 @@
-error[E0277]: the trait bound `posts::columns::id: SelectableExpression<users::table>` is not satisfied
+error[E0277]: Cannot select `posts::columns::id` from `users::table`
   --> tests/diesel/invalid_query.rs:20:18
    |
 20 |     users::table.select(posts::id);
    |                  ^^^^^^ the trait `SelectableExpression<users::table>` is not implemented for `posts::columns::id`
    |
+   = note: `posts::columns::id` is no valid selection for `users::table`
    = help: the following other types implement trait `SelectableExpression<QS>`:
              <posts::columns::id as SelectableExpression<JoinOn<Join, On>>>
              <posts::columns::id as SelectableExpression<Only<posts::table>>>
@@ -36,9 +37,9 @@ note: required because of the requirements on the impl of `AppearsOnTable<users:
      = note: required because of the requirements on the impl of `Query` for `SelectStatement<FromClause<users::table>, diesel::query_builder::select_clause::DefaultSelectClause<FromClause<users::table>>, diesel::query_builder::distinct_clause::NoDistinctClause, diesel::query_builder::where_clause::WhereClause<diesel::expression::grouped::Grouped<diesel::expression::operators::Eq<users::columns::id, posts::columns::id>>>>`
      = note: required because of the requirements on the impl of `LoadQuery<'_, _, (i32, std::string::String)>` for `SelectStatement<FromClause<users::table>, diesel::query_builder::select_clause::DefaultSelectClause<FromClause<users::table>>, diesel::query_builder::distinct_clause::NoDistinctClause, diesel::query_builder::where_clause::WhereClause<diesel::expression::grouped::Grouped<diesel::expression::operators::Eq<users::columns::id, posts::columns::id>>>>`
 note: required by a bound in `diesel::RunQueryDsl::load`
-    --> $CARGO/diesel-2.0.0-rc.1/src/query_dsl/mod.rs
+    --> /home/weiznich/.cargo/git/checkouts/diesel-e81fc6d5dd3ea3a2/958391a/diesel/src/query_dsl/mod.rs:1499:15
      |
-     |         Self: LoadQuery<'query, Conn, U>,
+1499 |         Self: LoadQuery<'query, Conn, U>,
      |               ^^^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `diesel::RunQueryDsl::load`
      = note: this error originates in the macro `$crate::__diesel_column` (in Nightly builds, run with -Z macro-backtrace for more info)
 
@@ -73,8 +74,8 @@ note: required because of the requirements on the impl of `AppearsOnTable<users:
      = note: required because of the requirements on the impl of `Query` for `SelectStatement<FromClause<users::table>, diesel::query_builder::select_clause::DefaultSelectClause<FromClause<users::table>>, diesel::query_builder::distinct_clause::NoDistinctClause, diesel::query_builder::where_clause::WhereClause<diesel::expression::grouped::Grouped<diesel::expression::operators::Eq<users::columns::id, posts::columns::id>>>>`
      = note: required because of the requirements on the impl of `LoadQuery<'_, _, (i32, std::string::String)>` for `SelectStatement<FromClause<users::table>, diesel::query_builder::select_clause::DefaultSelectClause<FromClause<users::table>>, diesel::query_builder::distinct_clause::NoDistinctClause, diesel::query_builder::where_clause::WhereClause<diesel::expression::grouped::Grouped<diesel::expression::operators::Eq<users::columns::id, posts::columns::id>>>>`
 note: required by a bound in `diesel::RunQueryDsl::load`
-    --> $CARGO/diesel-2.0.0-rc.1/src/query_dsl/mod.rs
+    --> /home/weiznich/.cargo/git/checkouts/diesel-e81fc6d5dd3ea3a2/958391a/diesel/src/query_dsl/mod.rs:1499:15
      |
-     |         Self: LoadQuery<'query, Conn, U>,
+1499 |         Self: LoadQuery<'query, Conn, U>,
      |               ^^^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `diesel::RunQueryDsl::load`
      = note: this error originates in the macro `$crate::__diesel_column` (in Nightly builds, run with -Z macro-backtrace for more info)
