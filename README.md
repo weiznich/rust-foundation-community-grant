@@ -142,22 +142,30 @@ Versions:
 
 #### bad_sql_query.rs <a name = "diesel_bad_sql_query"></a>
 
- | version | link (code)                    | link (error message)                   | change since last version |
- |---------|--------------------------------|----------------------------------------|---------------------------|
- | 1       | [bad_sql_query.rs][bad_sql_query.rs-1] | [bad_sql_query.stderr][bad_sql_query.stderr-1] |                           |
+ | version | link (code)                            | link (error message)                           | change since last version                                                                                                                         |
+ |---------|----------------------------------------|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+ | 1       | [bad_sql_query.rs][bad_sql_query.rs-1] | [bad_sql_query.stderr][bad_sql_query.stderr-1] |                                                                                                                                                   |
+ | 2       | [bad_sql_query.rs][bad_sql_query.rs-2] | [bad_sql_query.stderr][bad_sql_query.stderr-2] | Add a `#[rustc_on_unimplemented]` on the corresponding trait. https://github.com/diesel-rs/diesel/commit/958391a3e793e409d0a925e0cc2317726c2d84b2 |
+
+
 
 [bad_sql_query.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/bad_sql_query.rs
 [bad_sql_query.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/diesel/bad_sql_query.stderr
+[bad_sql_query.rs-2]:https://github.com/weiznich/rust-foundation-community-grant/blob/83fd28b310b7f33a630cb851f7fd8a5cc610d3fc/test_cases/tests/bad_sql_query.rs
+[bad_sql_query.stderr-2]: https://github.com/weiznich/rust-foundation-community-grant/blob/83fd28b310b7f33a630cb851f7fd8a5cc610d3fc/test_cases/tests/diesel/bad_sql_query.stderr
 
 
 #### invalid_query.rs <a name="diesel_invalid_query"></a>
 
- | version | link (code)                    | link (error message)                   | change since last version |
- |---------|--------------------------------|----------------------------------------|---------------------------|
- | 1       | [invalid_query.rs][invalid_query.rs-1] | [invalid_query.stderr][invalid_query.stderr-1] |                           |
+ | version | link (code)                            | link (error message)                           | change since last version                                                                                                                         |
+ |---------|----------------------------------------|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+ | 1       | [invalid_query.rs][invalid_query.rs-1] | [invalid_query.stderr][invalid_query.stderr-1] |                                                                                                                                                   |
+ | 2       | [invalid_query.rs][invalid_query.rs-2] | [invalid_query.stderr][invalid_query.stderr-2] | Add a `#[rustc_on_unimplemented]` on the corresponding trait. https://github.com/diesel-rs/diesel/commit/958391a3e793e409d0a925e0cc2317726c2d84b2 |
 
 [invalid_query.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/diesel/invalid_query.rs
 [invalid_query.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/diesel/invalid_query.stderr
+[invalid_query.rs-2]:https://github.com/weiznich/rust-foundation-community-grant/blob/83fd28b310b7f33a630cb851f7fd8a5cc610d3fc/test_cases/tests/diesel/invalid_query.rs
+[invalid_query.stderr-2]: https://github.com/weiznich/rust-foundation-community-grant/blob/83fd28b310b7f33a630cb851f7fd8a5cc610d3fc/test_cases/tests/diesel/invalid_query.stderr
 
 
 #### queryable_order_mismatch.rs <a name = "diesel_queryable"></a>
