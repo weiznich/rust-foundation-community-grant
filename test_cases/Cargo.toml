@@ -12,9 +12,10 @@ chumsky = "0.8.0"
 uom = "0.33.0"
 axum = "0.5.11"
 axum-macros = "0.2.3"
-bevy = "0.7.0"
+bevy = {version = "0.9.0-dev"}
 easy-ml = "1.8.1"
 typed-builder = "0.10.0"
 
 [patch.crates-io]
 diesel = { git = "https://github.com/weiznich/diesel", rev = "958391a3e793e409d0a925e0cc2317726c2d84b2"}
+bevy = {git = "https://github.com/bevyengine/bevy"}
