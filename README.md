@@ -194,12 +194,16 @@ Versions:
 #### system_mismatch.rs <a name="bevy_system_mismatch"></a>
 
 
- | version | link (code)                                | link (error message)                               | change since last version |
- |---------|--------------------------------------------|----------------------------------------------------|---------------------------|
- | 1       | [system_mismatch.rs][system_mismatch.rs-1] | [system_mismatch.stderr][system_mismatch.stderr-1] |                           |
+ | version | link (code)                                | link (error message)                               | change since last version                                                                                                   |
+ |---------|--------------------------------------------|----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+ | 1       | [system_mismatch.rs][system_mismatch.rs-1] | [system_mismatch.stderr][system_mismatch.stderr-1] |                                                                                                                             |
+ | 2       | [system_mismatch.rs][system_mismatch.rs-2] | [system_mismatch.stderr][system_mismatch.stderr-2] | https://github.com/bevyengine/bevy/pull/5786, which introduces `#[rustc_on_unimplemented]` attributes in multiple locations |
+|         |                                            |                                                    |                                                                                                                             |
 
 [system_mismatch.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/bevy/system_mismatch.rs
 [system_mismatch.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/bevy/system_mismatch.stderr
+[system_mismatch.rs-2]:https://github.com/weiznich/rust-foundation-community-grant/blob/e69f4f7e5bfa8faeeeb43369b206c32c45c3b5d0/test_cases/tests/bevy/system_mismatch.rs
+[system_mismatch.stderr-2]: https://github.com/weiznich/rust-foundation-community-grant/blob/e69f4f7e5bfa8faeeeb43369b206c32c45c3b5d0/test_cases/tests/bevy/system_mismatch.stderr
 
 ### axum
 
