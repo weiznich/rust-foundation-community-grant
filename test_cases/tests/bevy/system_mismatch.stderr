@@ -4,6 +4,7 @@ error[E0277]: the trait bound `MyResource: Resource` is not satisfied
 52  |     my_res: Res<MyResource>,
     |             ^^^^^^^^^^^^^^^ the trait `Resource` is not implemented for `MyResource`
     |
+    = note: consider adding `#[derive(bevy::Resource)]` to `MyResource`
     = help: the following other types implement trait `Resource`:
               AmbientLight
               AppTypeRegistry
@@ -15,17 +16,18 @@ error[E0277]: the trait bound `MyResource: Resource` is not satisfied
               ClearColor
             and 80 others
 note: required by a bound in `bevy::prelude::Res`
-   --> /home/weiznich/.cargo/git/checkouts/bevy-f7ffde730c324c74/3d194a2/crates/bevy_ecs/src/system/system_param.rs:268:23
+   --> /home/weiznich/.cargo/git/checkouts/bevy-daf8fe04ec93bc1c/7adcdd2/crates/bevy_ecs/src/system/system_param.rs:272:23
     |
-268 | pub struct Res<'w, T: Resource> {
+272 | pub struct Res<'w, T: Resource> {
     |                       ^^^^^^^^ required by this bound in `bevy::prelude::Res`
 
-error[E0277]: the trait bound `A: WorldQuery` is not satisfied
+error[E0277]: Using a `WorldQuery` object as parameter to `Query` requires the usage of a reference
    --> tests/bevy/system_mismatch.rs:67:45
     |
 67  | fn missing_reference_in_query_system(query: Query<A, With<B>>) {}
-    |                                             ^^^^^^^^^^^^^^^^^ the trait `WorldQuery` is not implemented for `A`
+    |                                             ^^^^^^^^^^^^^^^^^ consider using `& A` here
     |
+    = help: the trait `WorldQuery` is not implemented for `A`
     = help: the following other types implement trait `WorldQuery`:
               &'__w mut T
               &T
@@ -37,7 +39,7 @@ error[E0277]: the trait bound `A: WorldQuery` is not satisfied
               (F0, F1, F2, F3, F4, F5)
             and 50 others
 note: required by a bound in `bevy::prelude::Query`
-   --> /home/weiznich/.cargo/git/checkouts/bevy-f7ffde730c324c74/3d194a2/crates/bevy_ecs/src/system/query.rs:252:37
+   --> /home/weiznich/.cargo/git/checkouts/bevy-daf8fe04ec93bc1c/7adcdd2/crates/bevy_ecs/src/system/query.rs:252:37
     |
 252 | pub struct Query<'world, 'state, Q: WorldQuery, F: WorldQuery = ()> {
     |                                     ^^^^^^^^^^ required by this bound in `bevy::prelude::Query`
