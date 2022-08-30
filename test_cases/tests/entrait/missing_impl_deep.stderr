@@ -1,0 +1,26 @@
+error[E0599]: the method `t1` exists for struct `Impl<()>`, but its trait bounds were not satisfied
+  --> tests/entrait/missing_impl_deep.rs:57:9
+   |
+1  | struct Impl<T>(T);
+   | --------------
+   | |      |
+   | |      method `t1` not found for this struct
+   | doesn't satisfy `Impl<()>: T1`
+   | doesn't satisfy `Impl<()>: T2`
+...
+57 |     app.t1();
+   |         ^^ method cannot be called on `Impl<()>` due to unsatisfied trait bounds
+   |
+note: trait bound `Impl<()>: T2` was not satisfied
+  --> tests/entrait/missing_impl_deep.rs:13:11
+   |
+11 | impl<T> T1 for Impl<T>
+   |         --     -------
+12 | where
+13 |     Self: T2,
+   |           ^^ unsatisfied trait bound introduced here
+note: the following trait must be implemented
+  --> tests/entrait/missing_impl_deep.rs:20:1
+   |
+20 | trait T2 {
+   | ^^^^^^^^
