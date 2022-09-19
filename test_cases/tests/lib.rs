@@ -1,6 +1,3 @@
-
-
-
 #[test]
 fn diesel() {
     let t = trybuild::TestCases::new();
@@ -25,7 +22,6 @@ fn axum() {
     t.compile_fail("tests/axum/*.rs");
 }
 
-
 #[test]
 fn bevy() {
     let t = trybuild::TestCases::new();
@@ -42,4 +38,10 @@ fn easy_ml() {
 fn typed_builder() {
     let t = trybuild::TestCases::new();
     t.compile_fail("tests/typed_builder/*.rs");
+}
+
+#[test]
+fn entrait() {
+    let t = trybuild::TestCases::new();
+    t.compile_fail("tests/entrait/*.rs");
 }

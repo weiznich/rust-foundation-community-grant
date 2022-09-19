@@ -1,0 +1,21 @@
+error[E0599]: the method `t1` exists for struct `entrait::Impl<()>`, but its trait bounds were not satisfied
+   --> tests/entrait/missing_impl_deep.rs:21:9
+    |
+21  |     app.t1();
+    |         ^^ method cannot be called on `entrait::Impl<()>` due to unsatisfied trait bounds
+    |
+   ::: $CARGO/implementation-0.1.3/src/lib.rs
+    |
+    | pub struct Impl<T>(T);
+    | ------------------
+    | |
+    | doesn't satisfy `entrait::Impl<()>: T1`
+    | doesn't satisfy `entrait::Impl<()>: T2`
+    |
+note: trait bound `entrait::Impl<()>: T2` was not satisfied
+   --> tests/entrait/missing_impl_deep.rs:4:19
+    |
+3   | #[entrait(T1)]
+    |           --
+4   | fn t1(deps: &impl T2) {
+    |                   ^^ unsatisfied trait bound introduced here

@@ -1425,6 +1425,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "entrait"
+version = "0.4.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4c888ffada3dd9e9141898caf2a14e4eb4ac4dc75fee781daff48e10e8748b96"
+dependencies = [
+ "entrait_macros",
+ "implementation",
+]
+
+[[package]]
+name = "entrait_macros"
+version = "0.4.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c0f5cf4882a5b01c602016994a0fb686fa38a2c8d220872738a4aed3adf5c8ca"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "env_logger"
 version = "0.8.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1928,6 +1949,12 @@ dependencies = [
  "png",
  "scoped_threadpool",
 ]
+
+[[package]]
+name = "implementation"
+version = "0.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f9cd5b8cf68a1cda2eb0bdd7250e6ffa69edf485dda06dfb5e5a67a556e8db91"
 
 [[package]]
 name = "indexmap"
@@ -3070,6 +3097,7 @@ dependencies = [
  "chumsky",
  "diesel",
  "easy-ml",
+ "entrait",
  "trybuild",
  "typed-builder",
  "uom",
