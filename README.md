@@ -211,12 +211,20 @@ axum provides a `#[debug_handler]` attribute which emits better error messages i
 
 #### argument_not_extractor.rs <a name="axum_argument_not_extractor"></a>
 
- | version | link (code)                                    | link (error message)                                   | change since last version |
- |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
- | 1       | [argument_not_extractor.rs][argument_not_extractor.rs-1] | [argument_not_extractor.stderr][argument_not_extractor.stderr-1] |                           |
+ | version | link (code)                                              | link (error message)                                             | change since last version                                           |
+ |---------|----------------------------------------------------------|------------------------------------------------------------------|---------------------------------------------------------------------|
+ | 1       | [argument_not_extractor.rs][argument_not_extractor.rs-1] | [argument_not_extractor.stderr][argument_not_extractor.stderr-1] |                                                                     |
+ | 2       | [argument_not_extractor.rs][argument_not_extractor.rs-2] | [argument_not_extractor.stderr][argument_not_extractor.stderr-2] | [Fixes to the error spans of `#[debug_handler]`][debug_handler_fix] |
+ | 3       | [argument_not_extractor.rs][argument_not_extractor.rs-3] | [argument_not_extractor.stderr][argument_not_extractor.stderr-3] | [Point to `#[debug_handler]`][point_to_debug_handler]               |
 
 [argument_not_extractor.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/argument_not_extractor.rs
 [argument_not_extractor.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/argument_not_extractor.stderr
+[argument_not_extractor.rs-2]:https://github.com/weiznich/rust-foundation-community-grant/blob/3d98d3813285b30260ecc65b40ae8b340ac35cae/test_cases/tests/axum/argument_not_extractor.rs
+[argument_not_extractor.stderr-2]: https://github.com/weiznich/rust-foundation-community-grant/blob/3d98d3813285b30260ecc65b40ae8b340ac35cae/test_cases/tests/axum/argument_not_extractor.stderr
+[debug_handler_fix]:https://github.com/weiznich/axum/commit/d5d076dae495d5f76c364182e070d26ebe4972b8
+[argument_not_extractor.rs-3]:https://github.com/weiznich/rust-foundation-community-grant/blob/a7d2bf8a408580d6a3b047fe194096bf39479719/test_cases/tests/axum/argument_not_extractor.rs
+[argument_not_extractor.stderr-3]: https://github.com/weiznich/rust-foundation-community-grant/blob/a7d2bf8a408580d6a3b047fe194096bf39479719/test_cases/tests/axum/argument_not_extractor.stderr
+[point_to_debug_handler]: https://github.com/weiznich/axum/commit/a151aac96a8569c59df2de2c0ae3d645ab1c6430
 
 #### extract_self_ref <a name="axum_extract_self_ref"></a>
 
@@ -256,22 +264,35 @@ axum provides a `#[debug_handler]` attribute which emits better error messages i
 
 #### missing_deserialize.rs <a name="axum_missing_deserialize"></a>
 
- | version | link (code)                                        | link (error message)                                       | change since last version |
- |---------|----------------------------------------------------|------------------------------------------------------------|---------------------------|
- | 1       | [missing_deserialize.rs][missing_deserialize.rs-1] | [missing_deserialize.stderr][missing_deserialize.stderr-1] |                           |
+ | version | link (code)                                        | link (error message)                                       | change since last version                             |
+ |---------|----------------------------------------------------|------------------------------------------------------------|-------------------------------------------------------|
+ | 1       | [missing_deserialize.rs][missing_deserialize.rs-1] | [missing_deserialize.stderr][missing_deserialize.stderr-1] |                                                       |
+ | 2       | [missing_deserialize.rs][missing_deserialize.rs-2] | [missing_deserialize.stderr][missing_deserialize.stderr-2] | [Point to `#[debug_handler]`][point_to_debug_handler] |
 
 
 [missing_deserialize.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/missing_deserialize.rs
 [missing_deserialize.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/missing_deserialize.stderr
+[point_to_debug_handler]: https://github.com/weiznich/axum/commit/a151aac96a8569c59df2de2c0ae3d645ab1c6430
+[missing_deserialize.rs-2]:https://github.com/weiznich/rust-foundation-community-grant/blob/a7d2bf8a408580d6a3b047fe194096bf39479719/test_cases/tests/axum/missing_deserialize.rs
+[missing_deserialize.stderr-2]: https://github.com/weiznich/rust-foundation-community-grant/blob/a7d2bf8a408580d6a3b047fe194096bf39479719/test_cases/tests/axum/missing_deserialize.stderr
 
 #### multiple_body_extractors <a name="axum_multiple_body_extractors"></a>
 
- | version | link (code)                                    | link (error message)                                   | change since last version |
- |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
- | 1       | [multiple_body_extractors.rs][multiple_body_extractors.rs-1] | [multiple_body_extractors.stderr][multiple_body_extractors.stderr-1] |                           |
+ | version | link (code)                                                  | link (error message)                                                 | change since last version                                           |
+ |---------|--------------------------------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------------|
+ | 1       | [multiple_body_extractors.rs][multiple_body_extractors.rs-1] | [multiple_body_extractors.stderr][multiple_body_extractors.stderr-1] |                                                                     |
+ | 2       | [multiple_body_extractors.rs][multiple_body_extractors.rs-2] | [multiple_body_extractors.stderr][multiple_body_extractors.stderr-2] | [Fixes to the error spans of `#[debug_handler]`][debug_handler_fix] |
+ | 3       | [multiple_body_extractors.rs][multiple_body_extractors.rs-3] | [multiple_body_extractors.stderr][multiple_body_extractors.stderr-3] | [Point to `#[debug_handler]`][point_to_debug_handler]               |
+
 
 [multiple_body_extractors.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/multiple_body_extractors.rs
 [multiple_body_extractors.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/multiple_body_extractors.stderr
+[multiple_body_extractors.rs-2]:https://github.com/weiznich/rust-foundation-community-grant/blob/3d98d3813285b30260ecc65b40ae8b340ac35cae/test_cases/tests/axum/multiple_body_extractors.rs
+[multiple_body_extractors.stderr-2]: https://github.com/weiznich/rust-foundation-community-grant/blob/3d98d3813285b30260ecc65b40ae8b340ac35cae/test_cases/tests/axum/multiple_body_extractors.stderr
+[multiple_body_extractors.rs-3]:https://github.com/weiznich/rust-foundation-community-grant/blob/a7d2bf8a408580d6a3b047fe194096bf39479719/test_cases/tests/axum/multiple_body_extractors.rs
+[multiple_body_extractors.stderr-3]: https://github.com/weiznich/rust-foundation-community-grant/blob/a7d2bf8a408580d6a3b047fe194096bf39479719/test_cases/tests/axum/multiple_body_extractors.stderr
+[point_to_docs]: https://github.com/weiznich/axum/commit/a151aac96a8569c59df2de2c0ae3d645ab1c6430
+[debug_handler_fix]:https://github.com/weiznich/axum/commit/d5d076dae495d5f76c364182e070d26ebe4972b8
 
 #### multiple_paths <a name="axum_multiple_paths"></a>
 
@@ -312,12 +333,20 @@ axum provides a `#[debug_handler]` attribute which emits better error messages i
 
 #### request_not_last <a name="axum_request_not_last"></a>
 
- | version | link (code)                                    | link (error message)                                   | change since last version |
- |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
- | 1       | [request_not_last.rs][request_not_last.rs-1] | [request_not_last.stderr][request_not_last.stderr-1] |                           |
+ | version | link (code)                                  | link (error message)                                 | change since last version                                           |
+ |---------|----------------------------------------------|------------------------------------------------------|---------------------------------------------------------------------|
+ | 1       | [request_not_last.rs][request_not_last.rs-1] | [request_not_last.stderr][request_not_last.stderr-1] |                                                                     |
+ | 2       | [request_not_last.rs][request_not_last.rs-2] | [request_not_last.stderr][request_not_last.stderr-2] | [Fixes to the error spans of `#[debug_handler]`][debug_handler_fix] |
+ | 3       | [request_not_last.rs][request_not_last.rs-3] | [request_not_last.stderr][request_not_last.stderr-3] | [Point out as part of the error message, that `Request` always needs to be the last handler argument][improve_error_message_for_request_not_last]                                                                    |
 
 [request_not_last.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/request_not_last.rs
 [request_not_last.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/request_not_last.stderr
+[improve_error_message_for_request_not_last]: https://github.com/weiznich/axum/commit/a151aac96a8569c59df2de2c0ae3d645ab1c6430
+[debug_handler_fix]:https://github.com/weiznich/axum/commit/d5d076dae495d5f76c364182e070d26ebe4972b8
+[request_not_last.rs-2]:https://github.com/weiznich/rust-foundation-community-grant/blob/3d98d3813285b30260ecc65b40ae8b340ac35cae/test_cases/tests/axum/request_not_last.rs
+[request_not_last.stderr-2]: https://github.com/weiznich/rust-foundation-community-grant/blob/3d98d3813285b30260ecc65b40ae8b340ac35cae/test_cases/tests/axum/request_not_last.stderr
+[request_not_last.rs-3]:https://github.com/weiznich/rust-foundation-community-grant/blob/a7d2bf8a408580d6a3b047fe194096bf39479719/test_cases/tests/axum/request_not_last.rs
+[request_not_last.stderr-3]: https://github.com/weiznich/rust-foundation-community-grant/blob/a7d2bf8a408580d6a3b047fe194096bf39479719/test_cases/tests/axum/request_not_last.stderr
 
 
 #### too_many_extractors <a name="axum_too_many_extractors"></a>
