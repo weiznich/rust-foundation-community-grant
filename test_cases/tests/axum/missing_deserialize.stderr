@@ -1,14 +1,14 @@
-error[E0277]: the trait bound `fn(Json<Test>) -> impl Future<Output = ()> {test}: Handler<_, _>` is not satisfied
+error[E0277]: the trait bound `fn(Json<Test>) -> impl Future<Output = ()> {test}: Handler<_, _, _>` is not satisfied
    --> tests/axum/missing_deserialize.rs:6:30
     |
 6   |         .route("/test", post(test));
-    |                         ---- ^^^^ the trait `Handler<_, _>` is not implemented for `fn(Json<Test>) -> impl Future<Output = ()> {test}`
+    |                         ---- ^^^^ the trait `Handler<_, _, _>` is not implemented for `fn(Json<Test>) -> impl Future<Output = ()> {test}`
     |                         |
     |                         required by a bound introduced by this call
     |
-    = help: the trait `Handler<T, ReqBody>` is implemented for `Layered<S, T>`
+    = help: the trait `Handler<T, S, B>` is implemented for `Layered<L, H, T, S, B>`
 note: required by a bound in `post`
-   --> $CARGO/axum-0.5.11/src/routing/method_routing.rs
+   --> $CARGO/axum-0.6.0-rc.2/src/routing/method_routing.rs
     |
     | top_level_handler_fn!(post, POST);
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `post`

@@ -10,9 +10,15 @@ trybuild = "1"
 diesel = {version = "2.0.0-rc.1", default-features = false, features = ["sqlite", "postgres", "mysql", "nightly-error-messages"]}
 chumsky = "0.8.0"
 uom = "0.33.0"
+<<<<<<< HEAD
+axum = "0.5.11"
+axum-macros = "0.2.3"
+bevy = {version = "0.9.0-dev", features = ["nightly-error-messages"]}
+=======
 axum = "0.6.0-rc.2"
 axum-macros = "0.3.0-rc.1"
-bevy = {version = "0.9.0-dev", features = ["nightly-error-messages"]}
+bevy = "0.7.0"
+>>>>>>> 35985a6 (Update axum to 0.6.0-rc)
 easy-ml = "1.8.1"
 typed-builder = "0.10.0"
 entrait = "0.4"
