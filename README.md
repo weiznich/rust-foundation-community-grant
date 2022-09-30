@@ -218,6 +218,42 @@ axum provides a `#[debug_handler]` attribute which emits better error messages i
 [argument_not_extractor.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/argument_not_extractor.rs
 [argument_not_extractor.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/argument_not_extractor.stderr
 
+#### extract_self_ref <a name="axum_extract_self_ref"></a>
+
+ | version | link (code)                                    | link (error message)                                   | change since last version |
+ |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
+ | 1       | [extract_self_ref.rs][extract_self_ref.rs-1] | [extract_self_ref.stderr][extract_self_ref.stderr-1] |                           |
+
+[extract_self_ref.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/extract_self_ref.rs
+[extract_self_ref.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/extract_self_ref.stderr
+
+#### extract_self_mut <a name="axum_extract_self_mut"></a>
+
+ | version | link (code)                                    | link (error message)                                   | change since last version |
+ |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
+ | 1       | [extract_self_mut.rs][extract_self_mut.rs-1] | [extract_self_mut.stderr][extract_self_mut.stderr-1] |                           |
+
+[extract_self_mut.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/extract_self_mut.rs
+[extract_self_mut.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/extract_self_mut.stderr
+
+#### generics <a name="axum_generics"></a>
+
+ | version | link (code)                                    | link (error message)                                   | change since last version |
+ |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
+ | 1       | [generics.rs][generics.rs-1] | [generics.stderr][generics.stderr-1] |                           |
+
+[generics.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/generics.rs
+[generics.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/generics.stderr
+
+#### invalid_attrs <a name="axum_invalid_attrs"></a>
+
+ | version | link (code)                                    | link (error message)                                   | change since last version |
+ |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
+ | 1       | [invalid_attrs.rs][invalid_attrs.rs-1] | [invalid_attrs.stderr][invalid_attrs.stderr-1] |                           |
+
+[invalid_attrs.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/invalid_attrs.rs
+[invalid_attrs.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/invalid_attrs.stderr
+
 #### missing_deserialize.rs <a name="axum_missing_deserialize"></a>
 
  | version | link (code)                                        | link (error message)                                       | change since last version |
@@ -228,6 +264,70 @@ axum provides a `#[debug_handler]` attribute which emits better error messages i
 [missing_deserialize.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/missing_deserialize.rs
 [missing_deserialize.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/missing_deserialize.stderr
 
+#### multiple_body_extractors <a name="axum_multiple_body_extractors"></a>
+
+ | version | link (code)                                    | link (error message)                                   | change since last version |
+ |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
+ | 1       | [multiple_body_extractors.rs][multiple_body_extractors.rs-1] | [multiple_body_extractors.stderr][multiple_body_extractors.stderr-1] |                           |
+
+[multiple_body_extractors.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/multiple_body_extractors.rs
+[multiple_body_extractors.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/multiple_body_extractors.stderr
+
+#### multiple_paths <a name="axum_multiple_paths"></a>
+
+ | version | link (code)                                    | link (error message)                                   | change since last version |
+ |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
+ | 1       | [multiple_paths.rs][multiple_paths.rs-1] | [multiple_paths.stderr][multiple_paths.stderr-1] |                           |
+
+[multiple_paths.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/multiple_paths.rs
+[multiple_paths.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/multiple_paths.stderr
+
+#### not_a_function <a name="axum_not_a_function"></a>
+
+ | version | link (code)                                    | link (error message)                                   | change since last version |
+ |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
+ | 1       | [not_a_function.rs][not_a_function.rs-1] | [not_a_function.stderr][not_a_function.stderr-1] |                           |
+
+[not_a_function.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/not_a_function.rs
+[not_a_function.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/not_a_function.stderr
+
+#### not_async <a name="axum_not_async"></a>
+
+ | version | link (code)                                    | link (error message)                                   | change since last version |
+ |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
+ | 1       | [not_async.rs][not_async.rs-1] | [not_async.stderr][not_async.stderr-1] |                           |
+
+[not_async.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/not_async.rs
+[not_async.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/not_async.stderr
+
+#### not_send <a name="axum_not_send"></a>
+
+ | version | link (code)                                    | link (error message)                                   | change since last version |
+ |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
+ | 1       | [not_send.rs][not_send.rs-1] | [not_send.stderr][not_send.stderr-1] |                           |
+
+[not_send.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/not_send.rs
+[not_send.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/not_send.stderr
+
+
+#### request_not_last <a name="axum_request_not_last"></a>
+
+ | version | link (code)                                    | link (error message)                                   | change since last version |
+ |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
+ | 1       | [request_not_last.rs][request_not_last.rs-1] | [request_not_last.stderr][request_not_last.stderr-1] |                           |
+
+[request_not_last.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/request_not_last.rs
+[request_not_last.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/request_not_last.stderr
+
+
+#### too_many_extractors <a name="axum_too_many_extractors"></a>
+
+ | version | link (code)                                    | link (error message)                                   | change since last version |
+ |---------|------------------------------------------------|--------------------------------------------------------|---------------------------|
+ | 1       | [too_many_extractors.rs][too_many_extractors.rs-1] | [too_many_extractors.stderr][too_many_extractors.stderr-1] |                           |
+
+[too_many_extractors.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/too_many_extractors.rs
+[too_many_extractors.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/axum/too_many_extractors.stderr
 
 #### wrong_return_type.rs <a name="axum_wrong_return_type"></a>
 
