@@ -1,8 +1,8 @@
 error[E0277]: the trait bound `Request<Body>: FromRequestParts<()>` is not satisfied
- --> tests/axum/request_not_last.rs:4:1
+ --> tests/axum/request_not_last.rs:5:21
   |
-4 | #[debug_handler]
-  | ^^^^^^^^^^^^^^^^ the trait `FromRequestParts<()>` is not implemented for `Request<Body>`
+5 | async fn handler(_: Request<Body>, _: Extension<String>) {}
+  |                     ^^^^^^^^^^^^^ the trait `FromRequestParts<()>` is not implemented for `Request<Body>`
   |
   = help: the following other types implement trait `FromRequestParts<S>`:
             <() as FromRequestParts<S>>
@@ -13,7 +13,6 @@ error[E0277]: the trait bound `Request<Body>: FromRequestParts<()>` is not satis
             <(T1, T2, T3, T4, T5, T6) as FromRequestParts<S>>
             <(T1, T2, T3, T4, T5, T6, T7) as FromRequestParts<S>>
             <(T1, T2, T3, T4, T5, T6, T7, T8) as FromRequestParts<S>>
-          and 25 others
+          and 24 others
   = help: see issue #48214
   = help: add `#![feature(trivial_bounds)]` to the crate attributes to enable
-  = note: this error originates in the attribute macro `debug_handler` (in Nightly builds, run with -Z macro-backtrace for more info)

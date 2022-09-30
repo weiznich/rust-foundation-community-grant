@@ -8,8 +8,8 @@ error[E0277]: the trait bound `fn(Json<Test>) -> impl Future<Output = ()> {test}
     |
     = help: the trait `Handler<T, S, B>` is implemented for `Layered<L, H, T, S, B>`
 note: required by a bound in `post`
-   --> $CARGO/axum-0.6.0-rc.2/src/routing/method_routing.rs
+   --> /home/weiznich/.cargo/git/checkouts/axum-5ae1ef023c614a60/a151aac/axum/src/routing/method_routing.rs:404:1
     |
-    | top_level_handler_fn!(post, POST);
+404 | top_level_handler_fn!(post, POST);
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `post`
     = note: this error originates in the macro `top_level_handler_fn` (in Nightly builds, run with -Z macro-backtrace for more info)

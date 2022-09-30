@@ -20,3 +20,5 @@ entrait = "0.4"
 [patch.crates-io]
 diesel = { git = "https://github.com/weiznich/diesel", rev = "958391a3e793e409d0a925e0cc2317726c2d84b2"}
 bevy = {git = "https://github.com/weiznich/bevy", rev = "7adcdd2fd33fa935d53881f248fd1b7c2fbe39b8"}
+axum = {git = "https://github.com/weiznich/axum", rev = "a151aac96a8569c59df2de2c0ae3d645ab1c6430"}
+axum-macros = {git = "https://github.com/weiznich/axum", rev = "a151aac96a8569c59df2de2c0ae3d645ab1c6430"}
