@@ -1,9 +1,12 @@
-error[E0277]: the trait bound `Request<Body>: FromRequestParts<()>` is not satisfied
+error[E0277]: Request must always be the last argument to a handler function
  --> tests/axum/request_not_last.rs:5:21
   |
 5 | async fn handler(_: Request<Body>, _: Extension<String>) {}
-  |                     ^^^^^^^^^^^^^ the trait `FromRequestParts<()>` is not implemented for `Request<Body>`
+  |                     ^^^^^^^^^^^^^ Move this argument to the end of the argument list
   |
+  = help: the trait `FromRequestParts<()>` is not implemented for `Request<Body>`
+  = note: Function argument is no valid axum extractor.
+          See `https://docs.rs/axum/latest/axum/extract/index.html` for details
   = help: the following other types implement trait `FromRequestParts<S>`:
             <() as FromRequestParts<S>>
             <(T1, T2) as FromRequestParts<S>>
