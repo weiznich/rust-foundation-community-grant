@@ -47,6 +47,7 @@ as issue or PR (with minimal example) to this repository.
 | [axum]          | [request_not_last.rs]         | debug_handler                                    |
 | [axum]          | [too_many_extractors.rs]      | debug_handler                                    |
 | [axum]          | [wrong_return_type.rs]        | debug_handler                                    |
+| [entrait]       | [missing_impl_deep.rs]        | trait not implemented                            |
 
 
 [uom]: https://crates.io/crates/uom
@@ -56,6 +57,7 @@ as issue or PR (with minimal example) to this repository.
 [chumsky]: https://crates.io/crates/chumsky
 [bevy]: https://crates.io/crates/bevy
 [axum]: https://crates.io/crates/axum
+[entrait]: https://crates.io/crates/entrait
 
 [type_mismatch.rs]: #uom_type_mismatch
 [mismatch.rs]: #typed_builder_mismatch
@@ -80,6 +82,7 @@ as issue or PR (with minimal example) to this repository.
 [request_not_last.rs]: #axum_not_last
 [too_many_extractors.rs]: #axum_too_many_extractors.rs]
 [wrong_return_type.rs]: #axum_wrong_return_type
+[missing_impl_deep.rs]: #entrait_missing_impl_deep
 
 ### uom
 
@@ -109,6 +112,20 @@ Typed builder generates hidden types/deprecating messages to improve its error m
 
 [mismatch.rs-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/typed_builder/mismatch.rs
 [mismatch.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/883de46cbea5873bcc4af60e47f872efaa77a2b7/test_cases/tests/typed_builder/mismatch.stderr
+
+### entrait
+
+#### missing_impl_deep.rs <a name="entrait_missing_impl_deep"></a>
+
+Versions:
+
+ | version | link (code)                    | link (error message)                   | change since last version |
+ |---------|--------------------------------|----------------------------------------|---------------------------|
+ | 1       | [missing_impl_deep.rs][missing_impl_deep.rs-1] | [missing_impl_deep.stderr][missing_impl_deep.stderr-1] |                           |
+
+[missing_impl_deep.rs-1]:https://github.com/weiznich/rust-foundation-community-grant/blob/b90e741dc3a4d1615f087b6011ceb3eb65c64ee7/test_cases/tests/entrait/missing_impl_deep.rs
+[missing_impl_deep.stderr-1]: https://github.com/weiznich/rust-foundation-community-grant/blob/b90e741dc3a4d1615f087b6011ceb3eb65c64ee7/test_cases/tests/entrait/missing_impl_deep.stderr
+
 
 ### easy_ml
 
